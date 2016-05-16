@@ -23,42 +23,42 @@ describe "Creating todo lists" do
   it "displays an error when there is no title" do
     expect(TodoList.count).to eq(0)
 
-    create_todo_lists title: ""
+    create_todo_lists title: "", description: "My description for the todo_list"
 
     expect(TodoList.count).to eq(0)
     expect(page).to have_content("error")
 
     visit "/todo_lists"
-    expect(page).to_not have_content("Sample text")
+    expect(page).to_not have_content("My description for the todo_list")
   end
 
   it "displays an error when the title has less than 5 characters" do
     expect(TodoList.count).to eq(0)
-    create_todo_lists title: "Hi"
+    create_todo_lists title: "Hi", description: "My description for the todo_list"
     expect(TodoList.count).to eq(0)
     expect(page).to have_content("error")
 
     visit "/todo_lists"
-    expect(page).to_not have_content("Sample text")
+    expect(page).to_not have_content("My description for the todo_list")
   end
 
   it "displays an error when there is no description" do
     expect(TodoList.count).to eq(0)
-    create_todo_lists description: ""
+    create_todo_lists  title: "My todo list" ,description: ""
     expect(TodoList.count).to eq(0)
     expect(page).to have_content("error")
 
     visit "/todo_lists"
-    expect(page).to_not have_content("Groceries")
+    expect(page).to_not have_content("My todo list")
   end
 
   it "displays an error when the description has less than 10 characters" do
     expect(TodoList.count).to eq(0)
-    create_todo_lists description: "sample"
+    create_todo_lists title: "My todo list", description: "sample"
     expect(TodoList.count).to eq(0)
     expect(page).to have_content("error")
 
     visit "/todo_lists"
-    expect(page).to_not have_content("Bye")
+    expect(page).to_not have_content("My todo list")
   end
 end
