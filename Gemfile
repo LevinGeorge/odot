@@ -15,6 +15,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'web-console', '~> 2.0', group: :development
 gem "haml-rails", "~> 0.9"
+
 group :development, :test do
   gem 'byebug'
   gem 'spring'
