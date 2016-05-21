@@ -14,7 +14,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'web-console', '~> 2.0', group: :development
-# gem "erb2haml", group: :development
 gem "haml-rails", "~> 0.9"
 group :development, :test do
   gem 'byebug'
@@ -24,4 +23,5 @@ end
 
 group :test do
   gem 'capybara', '~> 2.7', '>= 2.7.1'
+  gem 'shoulda-matchers', '~> 3.1'
 end

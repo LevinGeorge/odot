@@ -18,7 +18,3 @@
 
 # Ignore application configuration
 /config/application.yml
-
-
-#Ignore database info
-/config/database.yml
