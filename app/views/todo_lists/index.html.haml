@@ -15,6 +15,8 @@
         %td
           = todo_list.description
         %td
+          = link_to 'List Items', todo_list_todo_items_path(todo_list )
+        %td
           = link_to 'Show', todo_list
         %td
           = link_to 'Edit', edit_todo_list_path(todo_list)
